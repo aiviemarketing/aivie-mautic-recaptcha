@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\Tests\Unit;
+namespace MauticPlugin\AivieRecaptchaBundle\Tests\Unit;
 
 use Mautic\FormBundle\Entity\Field;
 use Mautic\FormBundle\Event\ValidationEvent;
 use Mautic\IntegrationsBundle\Helper\IntegrationsHelper;
 use Mautic\LeadBundle\Model\LeadModel;
-use MauticPlugin\MauticRecaptchaBundle\EventListener\FormSubscriber;
-use MauticPlugin\MauticRecaptchaBundle\Integration\ConfigInterface;
-use MauticPlugin\MauticRecaptchaBundle\Integration\RecaptchaIntegration;
-use MauticPlugin\MauticRecaptchaBundle\Service\RecaptchaClient;
+use MauticPlugin\AivieRecaptchaBundle\EventListener\FormSubscriber;
+use MauticPlugin\AivieRecaptchaBundle\Integration\ConfigInterface;
+use MauticPlugin\AivieRecaptchaBundle\Integration\RecaptchaIntegration;
+use MauticPlugin\AivieRecaptchaBundle\Service\RecaptchaClient;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

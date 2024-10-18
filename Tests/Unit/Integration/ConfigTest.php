@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\Tests\Unit\Integration;
+namespace MauticPlugin\AivieRecaptchaBundle\Tests\Unit\Integration;
 
 use Mautic\IntegrationsBundle\Exception\IntegrationNotFoundException;
 use Mautic\IntegrationsBundle\Helper\IntegrationsHelper;
 use Mautic\IntegrationsBundle\Integration\Interfaces\IntegrationInterface;
 use Mautic\PluginBundle\Entity\Integration;
-use MauticPlugin\MauticRecaptchaBundle\Integration\Config;
-use MauticPlugin\MauticRecaptchaBundle\Integration\RecaptchaIntegration;
+use MauticPlugin\AivieRecaptchaBundle\Integration\Config;
+use MauticPlugin\AivieRecaptchaBundle\Integration\RecaptchaIntegration;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 

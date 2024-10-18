@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\EventListener;
+namespace MauticPlugin\AivieRecaptchaBundle\EventListener;
 
 use Mautic\CoreBundle\Exception\BadConfigurationException;
 use Mautic\FormBundle\Event\FormBuilderEvent;
@@ -11,10 +11,10 @@ use Mautic\FormBundle\FormEvents;
 use Mautic\LeadBundle\Event\LeadEvent;
 use Mautic\LeadBundle\LeadEvents;
 use Mautic\LeadBundle\Model\LeadModel;
-use MauticPlugin\MauticRecaptchaBundle\Form\Type\RecaptchaType;
-use MauticPlugin\MauticRecaptchaBundle\Integration\ConfigInterface;
-use MauticPlugin\MauticRecaptchaBundle\RecaptchaEvents;
-use MauticPlugin\MauticRecaptchaBundle\Service\RecaptchaClient;
+use MauticPlugin\AivieRecaptchaBundle\Form\Type\RecaptchaType;
+use MauticPlugin\AivieRecaptchaBundle\Integration\ConfigInterface;
+use MauticPlugin\AivieRecaptchaBundle\RecaptchaEvents;
+use MauticPlugin\AivieRecaptchaBundle\Service\RecaptchaClient;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;

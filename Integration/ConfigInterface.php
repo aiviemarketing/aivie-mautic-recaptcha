@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\Integration;
+namespace MauticPlugin\AivieRecaptchaBundle\Integration;
 
 interface ConfigInterface
 {

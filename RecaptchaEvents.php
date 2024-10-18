@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle;
+namespace MauticPlugin\AivieRecaptchaBundle;
 
 final class RecaptchaEvents
 {

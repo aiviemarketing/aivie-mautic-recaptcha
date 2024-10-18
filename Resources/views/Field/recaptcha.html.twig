@@ -30,7 +30,7 @@
         {% set mauticFormInputId = 'mauticform_input_' ~ formName ~ '_' ~ id %}
         
         <script src="https://www.google.com/recaptcha/enterprise.js?render={{ siteKey }}&hl={{ locale }}&badge=bottomright" async></script>
-        <script src="{{ getAssetUrl('plugins/MauticRecaptchaBundle/Assets/js/get-token.js', null, null, true) }}"></script>
+        <script src="{{ getAssetUrl('plugins/AivieRecaptchaBundle/Assets/js/get-token.js', null, null, true) }}"></script>
         
         <script type="text/javascript">
             window.addEventListener('load', function() {

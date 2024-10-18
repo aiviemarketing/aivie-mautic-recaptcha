@@ -14,6 +14,6 @@ return static function (ContainerConfigurator $configurator) {
     $excludes = [
     ];
 
-    $services->load('MauticPlugin\\MauticRecaptchaBundle\\', '../')
+    $services->load('MauticPlugin\\AivieRecaptchaBundle\\', '../')
         ->exclude('../{'.implode(',', array_merge(MauticCoreExtension::DEFAULT_EXCLUDES, $excludes)).'}');
 };

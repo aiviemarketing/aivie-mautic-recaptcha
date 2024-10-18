@@ -21,7 +21,7 @@
     "google/cloud-recaptcha-enterprise": "^1.15"
   },
   "extra": {
-    "install-directory-name": "MauticRecaptchaBundle"
+    "install-directory-name": "AivieRecaptchaBundle"
   },
   "scripts": {
     "test": [

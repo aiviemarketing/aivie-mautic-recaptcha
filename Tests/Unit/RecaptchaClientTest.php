@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\Tests\Unit;
+namespace MauticPlugin\AivieRecaptchaBundle\Tests\Unit;
 
 use Mautic\FormBundle\Entity\Field;
-use MauticPlugin\MauticRecaptchaBundle\Service\RecaptchaClient;
+use MauticPlugin\AivieRecaptchaBundle\Service\RecaptchaClient;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 

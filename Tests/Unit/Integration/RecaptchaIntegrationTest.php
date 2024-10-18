@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\Tests\Unit\Integration;
+namespace MauticPlugin\AivieRecaptchaBundle\Tests\Unit\Integration;
 
-use MauticPlugin\MauticRecaptchaBundle\Integration\RecaptchaIntegration;
+use MauticPlugin\AivieRecaptchaBundle\Integration\RecaptchaIntegration;
 use PHPUnit\Framework\TestCase;
 
 final class RecaptchaIntegrationTest extends TestCase
@@ -14,6 +14,6 @@ final class RecaptchaIntegrationTest extends TestCase
         $integration = new RecaptchaIntegration();
         $this->assertSame(RecaptchaIntegration::NAME, $integration->getName());
         $this->assertSame(RecaptchaIntegration::DISPLAY_NAME, $integration->getDisplayName());
-        $this->assertSame('plugins/MauticRecaptchaBundle/Assets/img/recaptcha.png', $integration->getIcon());
+        $this->assertSame('plugins/AivieRecaptchaBundle/Assets/img/recaptcha.png', $integration->getIcon());
     }
 }

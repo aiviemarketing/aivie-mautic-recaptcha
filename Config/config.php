@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use MauticPlugin\MauticRecaptchaBundle\Integration\RecaptchaIntegration;
-use MauticPlugin\MauticRecaptchaBundle\Integration\Support\ConfigSupport;
+use MauticPlugin\AivieRecaptchaBundle\Integration\RecaptchaIntegration;
+use MauticPlugin\AivieRecaptchaBundle\Integration\Support\ConfigSupport;
 
 return [
     'name'        => 'reCAPTCHA',
