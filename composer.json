@@ -10,6 +10,8 @@
       "email": "dev@aivie.ch"
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "keywords": ["mautic", "plugin", "integration", "aivie"],
   "require": {
     "php": ">=7.4.0 <8.1",
