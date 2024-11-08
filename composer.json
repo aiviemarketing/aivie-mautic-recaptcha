@@ -14,7 +14,6 @@
   "prefer-stable": true,
   "keywords": ["mautic", "plugin", "integration", "aivie"],
   "require": {
-    "php": ">=7.4.0 <8.1",
     "mautic/core-lib": "^5.0",
     "google/cloud-recaptcha-enterprise": "^1.15"
   },
