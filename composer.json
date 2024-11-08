@@ -8,10 +8,6 @@
     {
       "name": "Adrian Schimpf",
       "email": "dev@aivie.ch"
-    },
-    {
-      "name": "Rahul Shinde",
-      "email": "shinde.r.a@gmail.com"
     }
   ],
   "keywords": ["mautic", "plugin", "integration", "aivie"],
