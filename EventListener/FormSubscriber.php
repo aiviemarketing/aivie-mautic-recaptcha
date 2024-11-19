@@ -53,7 +53,7 @@ class FormSubscriber implements EventSubscriberInterface
         $event->addFormField('plugin.recaptcha', [
             'label'          => 'mautic.plugin.actions.recaptcha',
             'formType'       => RecaptchaType::class,
-            'template'       => '@MauticRecaptcha/Field/recaptcha.html.twig',
+            'template'       => '@AivieRecaptcha/Field/recaptcha.html.twig',
             'builderOptions' => [
                 'addLeadFieldList' => false,
                 'addIsRequired'    => false,
