@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\Integration;
+namespace MauticPlugin\AivieRecaptchaBundle\Integration;
 
 use Mautic\IntegrationsBundle\Integration\BasicIntegration;
-use Mautic\IntegrationsBundle\Integration\Interfaces\BasicInterface;
 use Mautic\IntegrationsBundle\Integration\ConfigurationTrait;
+use Mautic\IntegrationsBundle\Integration\Interfaces\BasicInterface;
 
 /**
  * Class RecaptchaIntegration.
  */
-class RecaptchaIntegration  extends BasicIntegration implements BasicInterface
+class RecaptchaIntegration extends BasicIntegration implements BasicInterface
 {
     use ConfigurationTrait;
 
@@ -30,6 +30,6 @@ class RecaptchaIntegration  extends BasicIntegration implements BasicInterface
 
     public function getIcon(): string
     {
-        return 'plugins/MauticRecaptchaBundle/Assets/img/recaptcha.png';
+        return 'plugins/AivieRecaptchaBundle/Assets/img/recaptcha.png';
     }
 }

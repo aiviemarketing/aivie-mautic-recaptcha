@@ -1,0 +1,56 @@
+{% set type = 'hidden' %}
+{% set required = true %}
+
+{% set formName = formName|default('')|replace({'_': ''}) %}
+{% set hashedFormName = md5(formName) %}
+{% set siteKey = field.customParameters.site_key %}
+{% set tagAction = field.customParameters.tagAction %}
+{% set locale = app.request.locale|slice(0, 2) %}
+
+{% set containerType = type|default('div-wrapper') %}
+{% set defaultInputClass = inputClass|default('input mautic-recaptcha-token') %}
+{% set containerClass = containerClass|default(containerType) %}
+
+{% set containerAttributes = htmlAttributesStringToArray(field.containerAttributes|default('')) %}
+{% set containerAttributes = containerAttributes|merge({
+    'id': 'mauticform_' ~ formName ~ '_' ~ id,
+    'class': containerAttributes.class|default([])|merge([
+        'mauticform-row',
+        'mauticform-' ~ containerClass,
+        'mauticform-field-' ~ field.order|default(0),
+    ]),
+}) %}
+
+<div {{ _self.renderAttributes(containerAttributes) }}>
+    {% if inForm is defined and true == inForm %}
+        <div {{ _self.renderAttributes(containerAttributes) }}>
+            <label class="text-muted">{{ field.label|purify }}</label>
+        </div>
+    {% else %}
+        {% set mauticFormInputId = 'mauticform_input_' ~ formName ~ '_' ~ id %}
+        
+        <script src="https://www.google.com/recaptcha/enterprise.js?render={{ siteKey }}&hl={{ locale }}&badge=bottomright" async></script>
+        <script src="{{ getAssetUrl('plugins/AivieRecaptchaBundle/Assets/js/get-token.js', null, null, true) }}"></script>
+        
+        <script type="text/javascript">
+            window.addEventListener('load', function() {
+                validateFormByRecaptcha('mauticform_{{ formName }}', '{{ siteKey }}', '{{ tagAction }}');
+            });
+        </script>
+        
+        {% set inputAttributes = htmlAttributesStringToArray(field.inputAttributes|default()) %}
+        {% set inputAttributes = inputAttributes|merge({
+            'id': mauticFormInputId,
+            'name': 'mauticform[' ~ field.alias ~ ']',
+            'class': inputAttributes.class|default([])|merge([defaultInputClass]),
+        }) %}
+        <input type="hidden" {{ _self.renderAttributes(inputAttributes) }}>
+        <span class="mauticform-errormsg" style="display: none;"></span>
+    {% endif %}
+</div>
+
+{% macro renderAttributes(attributes) %}
+    {% for attrName, attrValue in attributes %}
+        {{ attrName }}="{% if attrValue is iterable %}{{ attrValue|join(' ') }}{% else %}{{ attrValue }}{% endif %}"
+    {% endfor %}
+{% endmacro %}

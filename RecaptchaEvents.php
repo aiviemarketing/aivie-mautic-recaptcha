@@ -1,14 +1,10 @@
 <?php
 
-/*
- * @copyright   2018 Konstantin Scheumann. All rights reserved
- * @author      Konstantin Scheumann
- * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- */
+declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle;
+namespace MauticPlugin\AivieRecaptchaBundle;
 
 final class RecaptchaEvents
 {
-    const ON_FORM_VALIDATE = 'mautic.plugin.recaptcha.on_form_validate';
+    public const ON_FORM_VALIDATE = 'mautic.plugin.recaptcha.on_form_validate';
 }

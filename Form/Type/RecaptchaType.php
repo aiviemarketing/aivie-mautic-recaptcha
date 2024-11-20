@@ -1,15 +1,10 @@
 <?php
 
-/*
- * @copyright   2018 Konstantin Scheumann. All rights reserved
- * @author      Konstantin Scheumann
- * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- */
+declare(strict_types=1);
 
-namespace MauticPlugin\MauticRecaptchaBundle\Form\Type;
+namespace MauticPlugin\AivieRecaptchaBundle\Form\Type;
 
 use Mautic\CoreBundle\Form\Type\FormButtonsType;
-use Mautic\CoreBundle\Form\Type\YesNoButtonGroupType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,11 +14,7 @@ use Symfony\Component\Form\FormBuilderInterface;
  */
 class RecaptchaType extends AbstractType
 {
-    /**
-     * @param FormBuilderInterface $builder
-     * @param array                $options
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add(
             'minScore',
@@ -31,8 +22,8 @@ class RecaptchaType extends AbstractType
             [
                 'label'      => 'mautic.recaptcha.min.score',
                 'label_attr' => ['class' => 'control-label'],
-                'attr' => [
-                    'class' => 'form-control',
+                'attr'       => [
+                    'class'   => 'form-control',
                     'tooltip' => 'mautic.recaptcha.min.score.tooltip',
                 ],
                 'data'       => isset($options['data']['minScore']) ? (float) $options['data']['minScore'] : 0.8,
@@ -57,10 +48,7 @@ class RecaptchaType extends AbstractType
         }
     }
 
-    /**
-     * @return string
-     */
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'recaptcha';
     }

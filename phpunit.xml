@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
-<phpunit
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.5/phpunit.xsd"
-    colors                      = "true"
-    failOnWarning               = "true"
-    bootstrap                   = "autoload.php" >
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         processIsolation="false"
+         stopOnFailure="false">
+
+    <coverage>
+        <include>
+            <directory>*</directory>
+        </include>
+        <exclude>
+            <directory>Assets</directory>
+            <directory>Config</directory>
+            <directory>DependencyInjection</directory>
+            <directory>Resources</directory>
+            <directory>Tests</directory>
+            <directory>Translations</directory>
+            <directory>vendor</directory>
+        </exclude>
+    </coverage>
 
     <testsuites>
         <testsuite name="unit">
@@ -26,20 +46,6 @@
         <server name="KERNEL_DIR" value="app" />
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
-
-    <filter>
-        <whitelist>
-            <directory>*</directory>
-            <exclude>
-                <directory>Assets</directory>
-                <directory>Config</directory>
-                <directory>Tests</directory>
-                <directory>Translations</directory>
-                <directory>Views</directory>
-                <directory>vendor</directory>
-            </exclude>
-        </whitelist>
-    </filter>
 
     <listeners>
         <listener class="\Symfony\Bridge\PhpUnit\SymfonyTestsListener" />

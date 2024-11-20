@@ -2,7 +2,7 @@
   "name": "aiviemarketing/mautic-recaptcha",
   "description": "This plugin brings reCAPTCHA integration to Aivie and mautic.",
   "type": "mautic-plugin",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "license": "GPL-3.0-only",
   "authors": [
     {
@@ -10,13 +10,31 @@
       "email": "dev@aivie.ch"
     }
   ],
-  "keywords": ["mautic","plugin","integration","aivie"],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "keywords": ["mautic", "plugin", "integration", "aivie"],
   "require": {
-    "php": ">=7.4.0 <8.1",
-    "mautic/core-lib": "^4.0",
+    "mautic/core-lib": "^5.0",
     "google/cloud-recaptcha-enterprise": "^1.15"
   },
   "extra": {
-    "install-directory-name": "MauticRecaptchaBundle"
+    "install-directory-name": "AivieRecaptchaBundle"
+  },
+  "scripts": {
+    "test": [
+      "@phpunit",
+      "@csfixer"
+    ],
+    "quicktest": [
+      "@unit",
+      "@csfixer"
+    ],
+    "phpunit": "../../bin/phpunit -d memory_limit=1G  --bootstrap ../../vendor/autoload.php --configuration phpunit.xml --fail-on-warning --testsuite=all",
+    "unit": "../../bin/phpunit -d memory_limit=1G  --bootstrap ../../vendor/autoload.php --configuration phpunit.xml --fail-on-warning --testsuite=unit",
+    "functional": "../../bin/phpunit -d memory_limit=1G  --bootstrap ../../vendor/autoload.php --configuration phpunit.xml --fail-on-warning --testsuite=functional",
+    "coverage": "../../bin/phpunit -d memory_limit=1G  --bootstrap ../../vendor/autoload.php --configuration phpunit.xml --fail-on-warning --testsuite=all --coverage-text --coverage-html=Tests/Coverage",
+    "csfixer": "../../bin/php-cs-fixer fix . -v --dry-run --diff --using-cache=no --config=../../.php-cs-fixer.php",
+    "fixcs": "../../bin/php-cs-fixer fix . -v --using-cache=no --config=../../.php-cs-fixer.php",
+    "phpstan": "[ ! -f ../../var/cache/test/AppKernelTestDebugContainer.xml ] && (echo 'Building test cache ...'; APP_ENV=test APP_DEBUG=1 ../../bin/console > /dev/null 2>&1); php -d memory_limit=4G ../../bin/phpstan analyse ."
   }
 }
